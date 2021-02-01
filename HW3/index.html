@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Homework 3 Index">
+    <meta name="author" content="Alexander Stewart">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexander's Homework 3</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="row">
+          <img id="door-image" src="./images/door.png" alt="">
+        </div>
+        <div class="row">
+          <div id="main-text">
+            You wake up in a small, dark room. There are two doors on either side of you. Will you enter the left door, or the right door?
+          </div>
+        </div>
+
+        <div class="row">
+          <div onclick="choosePath(0)">
+            <p class="choice"  id="choice1">Left Door</p>
+          </div>
+          <div onclick="choosePath(1)">
+            <p class="choice" id="choice2">Right Door</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="./script.js" charset="utf-8"></script>
+  </body>
+</html>
