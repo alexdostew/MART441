@@ -18,35 +18,27 @@ body {
   max-width: 850px;
 }
 
-.card {
-  background-color: rgb(230,80,80);
-  width: 150px;
-  height: 225px;
-  margin: 10px;
-}
-
-.card-img {
-  width:150px;
-  height: 225px;
-}
-
 .row {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  min-height: 100px;
 }
 
-input, button {
-  background-color: rgb(50,50,50);
-  border: 1px solid rgb(200,200,200);
-  margin: 10px;
-  padding: 10px;
-  color: rgb(200,200,200);
+#square {
+  position: absolute;
+  left: 40px;
+  width: 200px;
+  height: 200px;
+  background-color: red;
 }
 
-button:hover {
-  background-color: rgb(200,200,200);
-  color: rgb(50,50,50);
-  cursor: pointer;
+#circle {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  right: 20px;
+  background-color: blue;
+  border-radius: 100%;
 }
