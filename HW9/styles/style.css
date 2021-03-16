@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(20,20,20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(200,200,200);
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  height: 100vh;
+}
+
+.container {
+/**  background-color: rgb(40,40,120); **/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  max-width: 850px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100px;
+}
+
+#square {
+  position: absolute;
+  left: 40px;
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}
+
+#circle {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  right: 20px;
+  background-color: blue;
+  border-radius: 100%;
+}
+
+input, button {
+  background-color: rgb(50,50,50);
+  border: 1px solid rgb(200,200,200);
+  margin: 10px;
+  padding: 10px;
+  color: rgb(200,200,200);
+}
+
+button:hover {
+  background-color: rgb(200,200,200);
+  color: rgb(50,50,50);
+  cursor: pointer;
+}

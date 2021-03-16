@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Homework 9 Index">
+    <meta name="author" content="Alexander Stewart">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+
+  </head>
+
+    <body>
+        <div class="container">
+          <div class="row">
+            Welcome to the Pokedex website
+          </div>
+          <div class="row">
+            Enter an ID between 1 - 151 below to show a specific pokemon
+          </div>
+          <div class="row">
+            <input type="text" id="index" name="index" value="1">
+            <button type="button" name="button" onclick="getPokemon();">Display Pokemon</button>
+          </div>
+
+          <div class="container">
+            <div id="pokeName"></div>
+            <div class="row">
+              <div id="pokeType"></div>
+            </div>
+            
+            <div class="row">
+              <img id="pokeImg" src="">
+            </div>
+
+          </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
