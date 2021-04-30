@@ -13,8 +13,10 @@
   </head>
 
     <body>
+        <div id="totalWins">wins: </div>
+        <div id="totalGames">games played: </div>
         <div class="container">
-          <div class="row">
+          <div class="row" id="winText">
             Welcome to 21
           </div>
           <div class="row" id="npcScore">
@@ -41,6 +43,10 @@
           <div class="row">
             <button type="button" name="button" onclick="newCard();">Get New Card</button>
             <button type="button" name="button" onclick="stand();">Stand</button>
+          </div>
+
+          <div class="row">
+            <button type="button" name="button" onclick="location.reload();">Restart</button>
           </div>
         </div>
 

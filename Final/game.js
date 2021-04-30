@@ -5,8 +5,12 @@ var playerCards = [];
 var npcCards = [];
 var index = 2;
 var gameover = false;
+var gamesPlayed;
+var wins;
+
 
 $(function(){
+  checkStorage();
   startGame();
 });
 
@@ -22,6 +26,17 @@ function startGame() {
   npcCards.push(Math.floor((Math.random() * 11) + 1));
   $("#npc0").text(npcCards[0]);
   npcScore += npcCards[0];
+
+  // if player is dealt two 11s at start of game, set score to 21
+  if (playerScore == 22) {
+    console.log('22!');
+    playerScore = 21;
+    playerCards[1] = 10;
+    $("#pc1").text(playerCards[1]);
+    $("#playerScore").text(playerScore);
+    $("#npcScore").text(npcScore);
+    stand();
+  }
 
   // update scores
   $("#playerScore").text(playerScore);
@@ -77,16 +92,49 @@ function stand() {
 }
 
 function gameLose() {
-  console.log(' you lose ');
+  $("#winText").text('You Lose!').css("color", "rgb(255,100,100)");
+  gamesPlayed++;
+  localStorage.setItem("gamesPlayed", gamesPlayed);
   gameover = true;
 }
 
 function gameDraw() {
-  console.log('draw!');
+  $("#winText").text('Draw!').css("color", "rgb(255,255,100)");
+  gamesPlayed++;
+  localStorage.setItem("gamesPlayed", gamesPlayed);
   gameover = true;
 }
 
 function gameWin() {
-  console.log('Win!');
+  $("#winText").text('You Win!').css("color", "rgb(100,255,100)");
+  gamesPlayed++;
+  wins++;
+  localStorage.setItem("gamesPlayed", gamesPlayed);
+  localStorage.setItem("wins", wins);
   gameover = true;
+}
+
+// check local storage, set wins and total games played text
+function checkStorage() {
+  if (localStorage.getItem("gamesPlayed") == null) {
+    console.log('no games storage!');
+    gamesPlayed = 0;
+    localStorage.setItem("gamesPlayed", gamesPlayed);
+  } else {
+    gamesPlayed = localStorage.getItem("gamesPlayed");
+  }
+
+  if (localStorage.getItem("wins") == null) {
+    console.log('no wins storage!');
+    wins = 0;
+    localStorage.setItem("wins", wins);
+  } else {
+    wins = localStorage.getItem("wins");
+  }
+
+  $("#totalWins").text("Wins: " + wins);
+  $("#totalGames").text("Games Played: " + gamesPlayed);
+
+  console.log("games: " + localStorage.getItem("gamesPlayed"));
+  console.log("wins: " + localStorage.getItem("wins"));
 }
